@@ -83,11 +83,11 @@ const Sidebar = () => {
   ];
 
   return (
-    <aside className="w-64 min-h-screen bg-slate-900 text-white flex flex-col">
+    <aside className="menu p-0 w-72 min-h-full bg-slate-900 text-white flex flex-col">
       {/* Logo */}
-      <div className="h-20 flex items-center justify-center border-b border-slate-700">
+      <Link href={"/"} className="h-20 flex items-center justify-center border-b border-slate-700">
         <h1 className="text-2xl font-bold text-cyan-400">Chayon Admin</h1>
-      </div>
+      </Link>
 
       {/* Menu */}
       <nav className="flex-1 px-4 py-6 space-y-2">

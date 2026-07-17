@@ -29,7 +29,7 @@ const fadeUp = {
 };
 const Banner = () => {
   return (
-    <section className="flex flex-col-reverse lg:flex-row items-center justify-between gap-12 py-10 lg:py-20">
+    <section className="w-full overflow-hidden flex flex-col-reverse lg:flex-row items-center justify-between gap-12 py-10 lg:py-20">
       {/* Left Content */}
       <motion.div
         className="w-full lg:w-1/2 text-center lg:text-left"
@@ -48,7 +48,7 @@ const Banner = () => {
 
         <motion.h1
           variants={fadeUp}
-          className="font-outfit text-4xl sm:text-5xl lg:text-5xl font-extrabold tracking-tight py-4 leading-tight"
+          className="font-outfit text-4xl sm:text-5xl lg:text-5xl font-extrabold tracking-tight py-4 leading-tight break-words"
         >
           Chayon Chandra <span className="text-primary">Sarker</span>
         </motion.h1>
@@ -69,17 +69,20 @@ const Banner = () => {
           Passionate about clean code, responsive design, and creating seamless
           digital experiences.
         </motion.p>
-        <div className="flex flex-col sm:flex-row justify-center lg:justify-start gap-4 mt-6">
+        <div className="mt-6 flex flex-col sm:flex-row items-center justify-center lg:justify-start gap-4 w-full">
           <Link
             href="/assets/Resume of Chayon Chandra Sarker.pdf"
             download
-            className="btn bg-primary text-black border-0 hover:bg-cyan-400"
+            className="btn bg-primary text-black border-0 hover:bg-cyan-400 rounded-full w-full sm:w-auto sm:min-w-[190px]"
           >
             Download Resume
             <FaArrowDown />
           </Link>
 
-          <Link href="#contact" className="btn btn-outline btn-primary">
+          <Link
+            href="#contact"
+            className="btn btn-outline btn-primary rounded-full w-full sm:w-auto sm:min-w-[190px]"
+          >
             Contact Me
           </Link>
         </div>
@@ -87,27 +90,25 @@ const Banner = () => {
 
       {/* Right Image */}
       <motion.div
-        animate={{
-          y: [0, -12, 0],
-          boxShadow: [
-            "0 0 20px rgba(8,145,178,0.3)",
-            "0 0 50px rgba(8,145,178,0.6)",
-            "0 0 20px rgba(8,145,178,0.3)",
-          ],
-        }}
+        animate={{ y: [0, -12, 0] }}
         transition={{
-          y: {
-            duration: 3,
-            repeat: Infinity,
-            ease: "easeInOut",
-          },
-          boxShadow: {
-            duration: 2,
-            repeat: Infinity,
-            ease: "easeInOut",
-          },
+          duration: 3,
+          repeat: Infinity,
+          ease: "easeInOut",
         }}
-        className="rounded-full p-2 border-4 border-primary shadow-[0_0_80px_rgba(8,145,178,0.8)]"
+        className="
+    w-full
+    max-w-[320px]
+    sm:max-w-[380px]
+    lg:max-w-[450px]
+    aspect-square
+    rounded-full
+    overflow-hidden
+    border-4
+    border-primary
+    shadow-[0_0_60px_rgba(8,145,178,0.6)]
+    mx-auto
+  "
       >
         <Image
           src="/assets/chayon.jpg"
@@ -115,11 +116,7 @@ const Banner = () => {
           width={500}
           height={500}
           priority
-          className="rounded-full object-cover
-                 w-64 h-64
-                 sm:w-80 sm:h-80
-                 md:w-96 md:h-96
-                 lg:w-[500px] lg:h-[500px]"
+          className="w-full h-full object-cover"
         />
       </motion.div>
     </section>

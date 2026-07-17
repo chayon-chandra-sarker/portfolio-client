@@ -42,15 +42,10 @@ const techs = [
 const TechMarquee = () => {
   return (
     <section className="py-8  overflow-hidden">
-      <Marquee speed={100} pauseOnHover gradient={false}>
+      <Marquee speed={80} pauseOnHover gradient={false} className="w-full">
         {techs.map((tech, index) => (
-          <div
-            key={index}
-            className="mx-10 flex flex-col items-center gap-3"
-          >
-            <div className="text-5xl text-primary">
-              {tech.icon}
-            </div>
+          <div key={index} className="mx-6 md:mx-10 flex flex-col items-center gap-3">
+            <div className="text-4xl md:text-5xl text-primary">{tech.icon}</div>
 
             <p className="uppercase tracking-[0.25em] text-sm text-base-content/70 font-medium">
               {tech.name}

@@ -8,8 +8,8 @@ import { fadeUp, staggerContainer } from "@/animations/variants";
 const About = () => {
   return (
     <section>
-      <div className="container mx-auto px-4 py-16">
-        <div className="flex flex-col lg:flex-row items-center gap-12">
+      <div className="w-11/12 max-w-7xl mx-auto px-0 py-16">
+        <div className="flex flex-col lg:flex-row items-center gap-8 lg:gap-12">
           {/* Left Image */}
           <div className="w-full lg:w-1/2 flex justify-center">
             <motion.div
@@ -37,11 +37,11 @@ const About = () => {
                 alt="about-chayon"
                 width={500}
                 height={700}
-                className="w-full max-w-sm md:max-w-md lg:max-w-lg object-cover"
+                className="w-full max-w-xs sm:max-w-sm md:max-w-md object-cover"
               />
             </motion.div>
           </div>
-        
+
           {/* Right Content */}
           <motion.div
             variants={staggerContainer}
@@ -51,21 +51,21 @@ const About = () => {
             className="w-full lg:w-1/2 text-center lg:text-left"
           >
             <motion.h2
-            variants={fadeUp}
-            className="text-primary font-semibold uppercase tracking-[0.3em] text-sm md:text-base"
+              variants={fadeUp}
+              className="text-primary font-semibold uppercase tracking-[0.3em] text-sm md:text-base"
             >
               About Me
             </motion.h2>
 
             <motion.h3
-            variants={fadeUp}
-            className="text-3xl md:text-4xl font-bold mt-3 mb-6"
+              variants={fadeUp}
+              className="text-3xl md:text-4xl font-bold mt-3 mb-6"
             >
               Get to Know Me Better
             </motion.h3>
             <motion.p
-            variants={fadeUp}
-            className="font-inter text-sm md:text-base lg:text-lg leading-7 lg:leading-8 py-5 max-w-xl mx-auto lg:mx-0"
+              variants={fadeUp}
+              className="font-inter text-sm md:text-base lg:text-lg leading-7 lg:leading-8 py-5 max-w-xl mx-auto lg:mx-0"
             >
               I&apos;m{" "}
               <span className="font-semibold">Chayon Chandra Sarker</span>, a
@@ -94,33 +94,110 @@ const About = () => {
           </motion.div>
         </div>
 
-        <div className="grid grid-cols-2 lg:grid-cols-4 gap-6 mt-12">
-          <div className="bg-base-200 rounded-2xl p-6 text-center border border-base-300 hover:border-primary transition-all duration-300 hover:-translate-y-2">
-            <h3 className="font-outfit text-4xl font-bold text-primary">5+</h3>
-            <p className="mt-2 font-inter text-base-content font-medium">
+        <div
+          className="
+    grid
+    grid-cols-1
+    sm:grid-cols-2
+    lg:grid-cols-4
+    gap-4
+    sm:gap-6
+    mt-10
+    md:mt-12
+  "
+        >
+          <div
+            className="
+      bg-base-200
+      rounded-2xl
+      p-5
+      sm:p-6
+      text-center
+      border
+      border-base-300
+      hover:border-primary
+      transition-all
+      duration-300
+      hover:-translate-y-2
+    "
+          >
+            <h3 className="font-outfit text-3xl sm:text-4xl font-bold text-primary">
+              5+
+            </h3>
+
+            <p className="mt-2 font-inter text-sm sm:text-base text-base-content font-medium">
               🚀 Projects Completed
             </p>
           </div>
 
-          <div className="bg-base-200 rounded-2xl p-6 text-center border border-base-300 hover:border-primary transition-all duration-300 hover:-translate-y-2">
-            <h3 className="font-outfit text-4xl font-bold text-primary">15+</h3>
-            <p className="mt-2 font-inter text-base-content font-medium">
+          <div
+            className="
+      bg-base-200
+      rounded-2xl
+      p-5
+      sm:p-6
+      text-center
+      border
+      border-base-300
+      hover:border-primary
+      transition-all
+      duration-300
+      hover:-translate-y-2
+    "
+          >
+            <h3 className="font-outfit text-3xl sm:text-4xl font-bold text-primary">
+              15+
+            </h3>
+
+            <p className="mt-2 font-inter text-sm sm:text-base text-base-content font-medium">
               💻 Technologies
             </p>
           </div>
 
-          <div className="bg-base-200 rounded-2xl p-6 text-center border border-base-300 hover:border-primary transition-all duration-300 hover:-translate-y-2">
-            <h3 className="font-outfit text-4xl font-bold text-primary">
+          <div
+            className="
+      bg-base-200
+      rounded-2xl
+      p-5
+      sm:p-6
+      text-center
+      border
+      border-base-300
+      hover:border-primary
+      transition-all
+      duration-300
+      hover:-translate-y-2
+    "
+          >
+            <h3 className="font-outfit text-3xl sm:text-4xl font-bold text-primary">
               100%
             </h3>
-            <p className="mt-2 font-inter text-base-content font-medium">
+
+            <p className="mt-2 font-inter text-sm sm:text-base text-base-content font-medium">
               🌍 Responsive Websites
             </p>
           </div>
 
-          <div className="bg-base-200 rounded-2xl p-6 text-center border border-base-300 hover:border-primary transition-all duration-300 hover:-translate-y-2">
-            <h3 className="font-outfit text-4xl font-bold text-primary">∞</h3>
-            <p className="mt-2 font-inter text-base-content font-medium">
+          <div
+            className="
+      bg-base-200
+      rounded-2xl
+      p-5
+      sm:p-6
+      text-center
+      border
+      border-base-300
+      hover:border-primary
+      transition-all
+      duration-300
+      hover:-translate-y-2
+    "
+          >
+            <h3 className="font-outfit text-3xl sm:text-4xl font-bold text-primary">
+              ∞
+            </h3>
+
+            <p className="mt-2 font-inter text-sm sm:text-base text-base-content font-medium">
               📚 Continuous Learning
             </p>
           </div>

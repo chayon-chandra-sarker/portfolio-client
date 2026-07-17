@@ -1,4 +1,5 @@
 import { outfit } from "@/fonts/fonts";
+import Image from "next/image";
 import Link from "next/link";
 
 const Logo = () => {
@@ -9,6 +10,7 @@ const Logo = () => {
       >
         Chayon <span className="text-secondary">Sarker</span>
       </h2>
+ 
     </Link>
   );
 };

@@ -8,7 +8,7 @@ export default function ThemeToggle() {
 
   return (
     <button
-      className="btn btn-circle btn-ghost"
+      className="btn btn-circle btn-ghost btn-sm"
       onClick={() =>
         setTheme(resolvedTheme === "dark" ? "light" : "dark")
       }

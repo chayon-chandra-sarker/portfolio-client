@@ -1,22 +1,34 @@
-import Navbar from "@/components/dashboard/Navbar";
 import Sidebar from "@/components/dashboard/Sidebar";
+import Navbar from "@/components/dashboard/Navbar";
 
-
-const layout = ({ children }) => {
+export default function DashboardLayout({ children }) {
   return (
-    <div className="flex min-h-screen">
-      <Sidebar />
+    <div className="drawer lg:drawer-open">
+      {/* Drawer Toggle */}
+      <input
+        id="dashboard-drawer"
+        type="checkbox"
+        className="drawer-toggle"
+      />
 
-      <div className="flex-1 flex flex-col">
+      {/* Main Content */}
+      <div className="drawer-content flex flex-col min-h-screen bg-gray-100">
         <Navbar />
 
-        <main className="flex-1 bg-gray-100 p-6">
+        <main className="flex-1 p-4 md:p-6">
           {children}
-    
         </main>
+      </div>
+
+      {/* Sidebar */}
+      <div className="drawer-side">
+        <label
+          htmlFor="dashboard-drawer"
+          className="drawer-overlay"
+        ></label>
+
+        <Sidebar />
       </div>
     </div>
   );
-};
-
-export default layout;
+}

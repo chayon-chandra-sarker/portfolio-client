@@ -1,12 +1,14 @@
 "use client";
 
 import { useRouter } from "next/navigation";
-import React, { useState } from "react";
+import { useState } from "react";
 import toast from "react-hot-toast";
 import { Eye, EyeOff } from "lucide-react";
+import { useAuth } from "@/context/AuthContext";
 
 const Login = () => {
   const router = useRouter();
+  const { login } = useAuth();
 
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
@@ -15,6 +17,7 @@ const Login = () => {
 
   const handleLogin = async (e) => {
     e.preventDefault();
+
     setLoading(true);
 
     const toastId = toast.loading("Logging in...");
@@ -24,29 +27,29 @@ const Login = () => {
         "https://portfolio-server-mpeo.onrender.com/api/auth/login",
         {
           method: "POST",
+          credentials: "include", // Important
           headers: {
             "Content-Type": "application/json",
           },
-          credentials: "include",
           body: JSON.stringify({
             email,
             password,
           }),
-        }
+        },
       );
 
       const data = await res.json();
 
       if (!res.ok) {
-        toast.dismiss(toastId);
-        toast.error(data.message || "Login Failed");
-        return;
+        throw new Error(data.message || "Login Failed");
       }
 
+      login();
+  
       toast.dismiss(toastId);
-      toast.success(data.message);
+      toast.success("Login Successful");
 
-      router.push("/dashboard");
+      router.replace("/dashboard");
     } catch (error) {
       toast.dismiss(toastId);
 
@@ -64,23 +67,19 @@ const Login = () => {
     <div className="min-h-screen flex items-center justify-center bg-base-100 px-4">
       <div className="card w-full max-w-md bg-base-200 shadow-2xl border border-base-300">
         <div className="card-body">
-          <h1 className="text-3xl font-bold text-center text-base-content mb-6">
-            Admin Login
-          </h1>
+          <h1 className="text-3xl font-bold text-center mb-6">Admin Login</h1>
 
           <form onSubmit={handleLogin}>
             {/* Email */}
             <div className="form-control mb-4">
               <label className="label">
-                <span className="label-text text-base-content">
-                  Email
-                </span>
+                <span className="label-text">Email</span>
               </label>
 
               <input
                 type="email"
-                placeholder="Enter your email"
                 className="input input-bordered w-full"
+                placeholder="Enter your email"
                 value={email}
                 onChange={(e) => setEmail(e.target.value)}
                 required
@@ -90,16 +89,14 @@ const Login = () => {
             {/* Password */}
             <div className="form-control mb-6">
               <label className="label">
-                <span className="label-text text-base-content">
-                  Password
-                </span>
+                <span className="label-text">Password</span>
               </label>
 
               <div className="relative">
                 <input
                   type={showPassword ? "text" : "password"}
-                  placeholder="Enter your password"
                   className="input input-bordered w-full pr-12"
+                  placeholder="Enter your password"
                   value={password}
                   onChange={(e) => setPassword(e.target.value)}
                   required
@@ -108,13 +105,9 @@ const Login = () => {
                 <button
                   type="button"
                   onClick={() => setShowPassword(!showPassword)}
-                  className="absolute right-4 top-1/2 -translate-y-1/2 text-gray-500 hover:text-primary"
+                  className="absolute right-4 top-1/2 -translate-y-1/2"
                 >
-                  {showPassword ? (
-                    <EyeOff size={20} />
-                  ) : (
-                    <Eye size={20} />
-                  )}
+                  {showPassword ? <EyeOff size={20} /> : <Eye size={20} />}
                 </button>
               </div>
             </div>
@@ -123,7 +116,7 @@ const Login = () => {
             <button
               type="submit"
               disabled={loading}
-              className="btn btn-primary w-full text-black"
+              className="btn btn-primary w-full"
             >
               {loading ? (
                 <>

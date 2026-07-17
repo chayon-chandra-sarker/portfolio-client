@@ -1,4 +1,8 @@
+"use client";
+
 import React from "react";
+
+
 import {
   FaHtml5,
   FaCss3Alt,
@@ -8,6 +12,12 @@ import {
   FaGitAlt,
   FaGithub,
   FaFigma,
+  FaCookieBite,
+  FaUserShield,
+  FaLock,
+  FaDocker,
+  FaServer,
+  FaCloud,
 } from "react-icons/fa";
 
 import {
@@ -20,8 +30,26 @@ import {
   SiTypescript,
   SiPostman,
   SiMysql,
+  SiAuth0,
+  SiVercel,
+  SiStripe,
 } from "react-icons/si";
-import { TbDatabase } from "react-icons/tb";
+
+import {
+  TbApi,
+  TbDatabase,
+  TbCode,
+} from "react-icons/tb";
+
+import { MdSecurity } from "react-icons/md";
+
+import { Swiper, SwiperSlide } from "swiper/react";
+import { EffectCoverflow, Pagination, Autoplay } from "swiper/modules";
+
+import "swiper/css";
+import "swiper/css/effect-coverflow";
+import "swiper/css/pagination";
+
 
 const skillCategories = [
   {
@@ -30,6 +58,7 @@ const skillCategories = [
       { name: "HTML5", icon: <FaHtml5 className="text-orange-500" /> },
       { name: "CSS3", icon: <FaCss3Alt className="text-blue-500" /> },
       { name: "JavaScript", icon: <FaJs className="text-yellow-400" /> },
+      { name: "TypeScript", icon: <SiTypescript className="text-blue-600" /> },
       { name: "React", icon: <FaReact className="text-cyan-400" /> },
       { name: "Next.js", icon: <SiNextdotjs /> },
       {
@@ -38,75 +67,264 @@ const skillCategories = [
       },
     ],
   },
+
   {
     title: "Backend",
     skills: [
-      { name: "Node.js", icon: <FaNodeJs className="text-green-600" /> },
-      { name: "Express.js", icon: <SiExpress /> },
-      { name: "TypeScript", icon: <SiTypescript className="text-blue-600" /> },
-      { name: "Prisma", icon: <SiPrisma /> },
+      {
+        name: "Node.js",
+        icon: <FaNodeJs className="text-green-600" />,
+      },
+      {
+        name: "Express.js",
+        icon: <SiExpress className="text-blue-600" />,
+      },
+      { name: "TypeScript", 
+        icon: <SiTypescript className="text-blue-600" />
+      },
+      {
+        name: "Prisma ORM",
+        icon: <SiPrisma  className="text-blue-600"/>,
+      },
+      {
+        name: "REST API",
+        icon: <TbApi className="text-sky-500" />,
+      },
     ],
   },
+
   {
     title: "Database",
     skills: [
-      { name: "PostgreSQL", icon: <SiPostgresql className="text-blue-500" /> },
-      { name: "MongoDB", icon: <SiMongodb className="text-green-500" /> },
-      {name: "MySQL",icon: <SiMysql className="text-sky-600" />},
+      {
+        name: "PostgreSQL",
+        icon: <SiPostgresql className="text-blue-500" />,
+      },
+      {
+        name: "MongoDB",
+        icon: <SiMongodb className="text-green-500" />,
+      },
+      {
+        name: "MySQL",
+        icon: <SiMysql className="text-sky-600" />,
+      },
     ],
   },
+
   {
-    title: "Tools",
+    title: "Authentication & Security",
     skills: [
-      { name: "Git", icon: <FaGitAlt className="text-orange-500" /> },
-      { name: "GitHub", icon: <FaGithub /> },
-      { name: "Postman", icon: <SiPostman className="text-orange-400" /> },
-      { name: "Figma", icon: <FaFigma className="text-pink-500" /> },
-      {name: "Beekeeper Studio",icon: <TbDatabase className="text-amber-500" />},
+      {
+        name: "JWT",
+        icon: <FaLock className="text-red-500" />,
+      },
+      {
+        name: "Bcrypt",
+        icon: <FaLock className="text-yellow-500" />,
+      },
+      {
+        name: "Cookies",
+        icon: <FaCookieBite className="text-orange-400" />,
+      },
+      {
+        name: "OAuth",
+        icon: <SiAuth0 className="text-orange-500" />,
+      },
+      {
+        name: "CORS",
+        icon: <MdSecurity className="text-green-500" />,
+      },
+      {
+        name: "RBAC",
+        icon: <FaUserShield className="text-blue-500" />,
+      },
+    ],
+  },
+
+  {
+    title: "Development Tools",
+    skills: [
+      {
+        name: "Git",
+        icon: <FaGitAlt className="text-orange-500" />,
+      },
+      {
+        name: "GitHub",
+        icon: <FaGithub />,
+      },
+      {
+        name: "Postman",
+        icon: <SiPostman className="text-orange-400" />,
+      },
+      {
+        name: "Figma",
+        icon: <FaFigma className="text-pink-500" />,
+      },
+      {
+        name: "VS Code",
+        icon: <TbCode className="text-blue-500" />,
+      },
+      {
+        name: "Beekeeper Studio",
+        icon: <TbDatabase className="text-amber-500" />,
+      },
+    ],
+  },
+
+  {
+    title: "Deployment & DevOps",
+    skills: [
+      {
+        name: "Docker",
+        icon: <FaDocker className="text-blue-500" />,
+      },
+      {
+        name: "Vercel",
+        icon: <SiVercel />,
+      },
+      {
+        name: "Render",
+        icon: <FaServer className="text-purple-500" />,
+      },
+      {
+        name: "Cloudinary",
+        icon: <FaCloud className="text-sky-500" />,
+      },
+      {
+        name: "Stripe",
+        icon: <SiStripe className="text-violet-500" />,
+      },
     ],
   },
 ];
 
 const Skills = () => {
   return (
-    <section >
-      <div className="w-11/12 mx-auto">
+    <section className="py-12 md:py-20 overflow-hidden">
+      <div className="w-11/12 max-w-7xl mx-auto">
+
         {/* Heading */}
-        <div className="text-center mb-14">
-          <h4 className="text-primary uppercase tracking-[0.3em] font-semibold font-outfit">
+        <div className="text-center mb-10 md:mb-14">
+          <h4 className="text-primary uppercase tracking-[0.3em] font-semibold font-outfit text-sm md:text-base">
             My Skills
           </h4>
 
-          <h2 className="text-4xl font-outfit font-bold text-base-content mt-3">
+          <h2 className="text-3xl md:text-4xl font-bold font-outfit mt-3">
             Technologies I Work With
           </h2>
         </div>
 
-        {/* Cards */}
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
+
+        <Swiper
+          effect="coverflow"
+          centeredSlides={true}
+          grabCursor={true}
+          loop={true}
+          slidesPerView="auto"
+          autoplay={{
+            delay: 2000,
+            disableOnInteraction: false,
+          }}
+          speed={800}
+          coverflowEffect={{
+            rotate: 15,
+            stretch: 0,
+            depth: 120,
+            modifier: 2,
+            scale: 0.9,
+            slideShadows: false,
+          }}
+          pagination={{
+            clickable: true,
+          }}
+          modules={[
+            EffectCoverflow,
+            Pagination,
+            Autoplay,
+          ]}
+          className="pb-12"
+        >
+
           {skillCategories.map((category) => (
-            <div
+            <SwiperSlide
               key={category.title}
-              className="bg-base-200 rounded-2xl p-6 border border-base-300 hover:border-primary hover:-translate-y-2 transition-all duration-300"
+              className="
+                !w-[280px]
+                sm:!w-[300px]
+                md:!w-[330px]
+              "
             >
-              <h3 className="text-2xl font-outfit font-bold text-primary mb-6">
-                {category.title}
-              </h3>
 
-              <div className="space-y-4">
-                {category.skills.map((skill) => (
-                  <div key={skill.name} className="flex items-center gap-3">
-                    <span className="text-2xl">{skill.icon}</span>
+              <div
+                className="
+                  min-h-[380px]
+                  md:min-h-[430px]
+                  bg-base-200
+                  rounded-3xl
+                  border
+                  border-base-300
+                  p-6
+                  md:p-8
+                  shadow-xl
+                  hover:border-primary
+                  hover:shadow-primary/20
+                  transition-all
+                  duration-500
+                "
+              >
 
-                    <span className="text-base-content font-medium">
-                      {skill.name}
-                    </span>
-                  </div>
-                ))}
+                <h3
+                  className="
+                  text-2xl
+                  md:text-3xl
+                  font-bold
+                  text-primary
+                  mb-6
+                  "
+                >
+                  {category.title}
+                </h3>
+
+
+                <div className="space-y-4 md:space-y-5">
+
+                  {category.skills.map((skill)=>(
+                    <div
+                      key={skill.name}
+                      className="
+                        flex
+                        items-center
+                        gap-3
+                        md:gap-4
+                      "
+                    >
+
+                      <span className="text-2xl md:text-3xl">
+                        {skill.icon}
+                      </span>
+
+                      <span
+                        className="
+                        text-base
+                        md:text-lg
+                        font-medium
+                        "
+                      >
+                        {skill.name}
+                      </span>
+
+                    </div>
+                  ))}
+
+                </div>
+
               </div>
-            </div>
+
+            </SwiperSlide>
           ))}
-        </div>
+
+        </Swiper>
+
       </div>
     </section>
   );

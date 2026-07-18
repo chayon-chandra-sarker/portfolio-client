@@ -118,7 +118,7 @@ const AllProjects = () => {
                 </p>
 
                 <div className="flex flex-wrap gap-2 my-5">
-                  {project.technology?.slice(1,4).map((tech, index) => (
+                  {project.technology?.slice(1, 4).map((tech, index) => (
                     <span
                       key={`${tech}-${index}`}
                       className="badge badge-primary badge-outline"

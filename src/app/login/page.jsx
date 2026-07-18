@@ -44,12 +44,17 @@ const Login = () => {
         throw new Error(data.message || "Login Failed");
       }
 
+      // Save tokens
+      localStorage.setItem("accessToken", data.data.accessToken);
+      localStorage.setItem("refreshToken", data.data.refreshToken);
+
       login();
-  
+
       toast.dismiss(toastId);
       toast.success("Login Successful");
 
       router.replace("/dashboard");
+
     } catch (error) {
       toast.dismiss(toastId);
 

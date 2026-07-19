@@ -22,7 +22,7 @@ const Footer = () => {
           {/* Brand */}
           <div className="text-center md:text-left">
             <h2 className="text-4xl font-black font-outfit bg-gradient-to-r from-cyan-400 via-sky-400 to-blue-500 bg-clip-text text-transparent">
-              Chayon
+              Chayon Sarker
             </h2>
 
             <p className="mt-4 text-base-content/70 leading-7 max-w-sm">

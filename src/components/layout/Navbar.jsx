@@ -168,7 +168,7 @@ hover:after:w-full
             <ul className="menu menu-horizontal gap-2">{nav}</ul>
           </div>
 
-          <div className="navbar-end gap-3">
+          <div className="navbar-end gap-2">
             <ThemeToggle />
 
             {!isLoggedIn ? (

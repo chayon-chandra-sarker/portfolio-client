@@ -1,106 +1,179 @@
-# Typography Guide
+# 🚀 Chayon Chandra Sarker | Portfolio Frontend
 
-This project uses three fonts to create a modern, clean, and professional Full Stack Developer portfolio.
+A modern and responsive developer portfolio built with **Next.js 15**, showcasing my projects, skills, experience, and a complete admin dashboard to manage portfolio content.
 
-## Font Selection
+## 🌐 Live Demo
 
-### Outfit
+**Frontend:** https://chayonsarker.vercel.app/
 
-**Purpose:** Branding and headings
+## 📌 Features
 
-Used for:
-
-* Logo
-* Hero Name
-* Hero Title
-* Section Titles
-
----
-
-### Geist
-
-**Purpose:** User Interface (UI)
-
-Used for:
-
-* Navbar
-* Buttons
-* Project Card Titles
-* Tech Stack
-* Timeline Titles
-* Form Labels
+* ✨ Modern & Responsive UI
+* 🌙 Dark Theme Support
+* 📱 Mobile Friendly Design
+* 🎨 Smooth Animations with Framer Motion
+* 👨‍💻 About Me Section
+* 🛠️ Skills Showcase
+* 🎓 Education Section
+* 📂 Featured Projects
+* 📄 Project Details Page
+* 📩 Contact Form
+* 🔐 Admin Authentication
+* 📊 Dashboard
+* 📁 Project Management
+* 💡 Skill Management
+* 💼 Experience Management
+* 📬 Message Management
+* ⚡ Loading Skeletons
+* 🔥 Toast Notifications
 
 ---
 
-### Inter
+# 🛠️ Tech Stack
 
-**Purpose:** Readability
+### Frontend
 
-Used for:
+* Next.js 15 (App Router)
+* React 19
+* Tailwind CSS
+* DaisyUI
+* Framer Motion
+* Axios
+* React Hot Toast
+* Lucide React
+* React Icons
 
-* Hero Description
+---
+
+# 📂 Folder Structure
+
+```bash
+src/
+│
+├── app/
+│   ├── dashboard/
+│   ├── login/
+│   ├── projects/
+│   ├── layout.jsx
+│   └── page.jsx
+│
+├── components/
+│   ├── Home/
+│   ├── dashboard/
+│   ├── layout/
+│   ├── buttons/
+│   └── providers/
+│
+├── animations/
+├── context/
+├── hooks/
+└── lib/
+```
+
+---
+
+# 🔐 Authentication
+
+* JWT Authentication
+* Protected Dashboard Routes
+* Admin Only Access
+
+---
+
+# 📬 Contact System
+
+Visitors can send messages directly from the portfolio contact form.
+
+Messages are securely stored in the database and can be managed from the Admin Dashboard.
+
+---
+
+# ⚙️ Installation
+
+Clone the repository
+
+```bash
+git clone https://github.com/chayon-chandra-sarker/portfolio-client
+```
+
+Go to project folder
+
+```bash
+cd portfolio-client
+```
+
+Install dependencies
+
+```bash
+npm install
+```
+
+Run development server
+
+```bash
+npm run dev
+```
+
+Open
+
+```text
+http://localhost:3000
+```
+
+---
+
+# 🌍 Environment Variables
+
+Create a `.env.local` file.
+
+```env
+NEXT_PUBLIC_API_URL=https://portfolio-server-mpeo.onrender.com/api/...
+```
+
+---
+
+# 📸 Screenshots
+
+* Home Page
 * About Section
-* Project Description
-* Experience Description
-* Input Text
-* Footer
-* Long paragraphs
+* Skills
+* Projects
+* Contact
+* Login
+* Dashboard
+* Messages
+* Project Management
 
 ---
 
-# Typography System
+# 🔗 Backend Repository
 
-| Section                     | Font   | Tailwind Size          | Font Weight      |
-| --------------------------- | ------ | ---------------------- | ---------------- |
-| Logo                        | Outfit | `text-3xl`             | `font-bold`      |
-| Navbar                      | Geist  | `text-base`            | `font-medium`    |
-| Hero Greeting               | Inter  | `text-lg`              | `font-medium`    |
-| Hero Name                   | Outfit | `text-5xl lg:text-7xl` | `font-extrabold` |
-| Hero Title                  | Outfit | `text-3xl lg:text-5xl` | `font-bold`      |
-| Hero Description            | Inter  | `text-base lg:text-lg` | `font-normal`    |
-| Primary Button              | Geist  | `text-base`            | `font-semibold`  |
-| Section Title               | Outfit | `text-4xl`             | `font-bold`      |
-| Section Subtitle            | Inter  | `text-lg`              | `font-normal`    |
-| Project Card Title          | Geist  | `text-xl`              | `font-semibold`  |
-| Project Description         | Inter  | `text-sm lg:text-base` | `font-normal`    |
-| Tech Stack                  | Geist  | `text-sm`              | `font-medium`    |
-| Timeline / Experience Title | Geist  | `text-xl`              | `font-semibold`  |
-| Experience Description      | Inter  | `text-base`            | `font-normal`    |
-| Form Labels                 | Geist  | `text-sm`              | `font-medium`    |
-| Input Text                  | Inter  | `text-base`            | `font-normal`    |
-| Footer                      | Inter  | `text-sm`              | `font-normal`    |
+Connect this frontend with the Portfolio Backend API.
 
 ---
 
-# Font Hierarchy
+# 👨‍💻 Author
 
-## Outfit
+**Chayon Chandra Sarker**
 
-* Brand Identity
-* Hero Headlines
-* Section Headings
+Full Stack Developer
 
-## Geist
+### Connect with Me
 
-* Navigation
-* Buttons
-* UI Components
-* Card Titles
-* Labels
-
-## Inter
-
-* Paragraphs
-* Descriptions
-* Long-form Content
-* Footer
+* GitHub: https://github.com/chayon-chandra-sarker
+* LinkedIn: https://www.linkedin.com/in/chayon11/
+* Facebook: https://www.facebook.com/chayonsarkerns
 
 ---
 
-# Design Principles
+# ⭐ Support
 
-* **Outfit** creates a bold and memorable visual identity.
-* **Geist** provides a clean and modern interface for navigation and UI elements.
-* **Inter** ensures excellent readability for paragraphs and descriptions.
+If you like this project, please give it a ⭐ on GitHub.
 
-This typography system is optimized for a modern dark-themed Full Stack Developer portfolio built with Next.js, Tailwind CSS, and DaisyUI.
+It motivates me to build more amazing projects.
+
+---
+
+## 📄 License
+
+This project is licensed under the MIT License.

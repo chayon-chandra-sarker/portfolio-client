@@ -83,6 +83,7 @@ const Login = () => {
 
               <input
                 type="email"
+                autoComplete="email"
                 className="input input-bordered w-full"
                 placeholder="Enter your email"
                 value={email}
@@ -100,6 +101,7 @@ const Login = () => {
               <div className="relative">
                 <input
                   type={showPassword ? "text" : "password"}
+                  autoComplete="current-password"
                   className="input input-bordered w-full pr-12"
                   placeholder="Enter your password"
                   value={password}

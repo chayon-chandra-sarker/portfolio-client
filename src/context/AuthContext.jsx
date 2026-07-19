@@ -9,30 +9,42 @@ export const AuthProvider = ({ children }) => {
   const [loading, setLoading] = useState(true);
 
   useEffect(() => {
-    const checkLogin = async () => {
-      try {
-        const res = await fetch(
-          "https://portfolio-server-mpeo.onrender.com/api/auth/me",
-          {
-            method: "GET",
-            credentials: "include",
-          },
-        );
+  const checkLogin = async () => {
+    try {
+      const token = localStorage.getItem("accessToken");
 
-        if (res.ok) {
-          setIsLoggedIn(true);
-        } else {
-          setIsLoggedIn(false);
-        }
-      } catch (error) {
+      if (!token) {
         setIsLoggedIn(false);
-      } finally {
         setLoading(false);
+        return;
       }
-    };
 
-    checkLogin();
-  }, []);
+      const res = await fetch(
+        "https://portfolio-server-mpeo.onrender.com/api/auth/me",
+        {
+          method: "GET",
+          headers: {
+            Authorization: `Bearer ${token}`,
+          },
+          credentials: "include",
+        }
+      );
+
+      if (res.ok) {
+        setIsLoggedIn(true);
+      } else {
+        setIsLoggedIn(false);
+      }
+    } catch (error) {
+      console.error(error);
+      setIsLoggedIn(false);
+    } finally {
+      setLoading(false);
+    }
+  };
+
+  checkLogin();
+}, []);
 
   const login = () => {
     setIsLoggedIn(true);

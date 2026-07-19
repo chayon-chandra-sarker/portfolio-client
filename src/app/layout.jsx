@@ -12,6 +12,11 @@ const geist = Geist({
 
 export const metadata = {
   title: "Chayon Sarker | Full Stack Developer",
+  icons: {
+    icon: "/logo.png",
+    shortcut: "/logo.png",
+    apple: "/logo.png",
+  },
   description:
     "Portfolio of Chayon Chandra Sarker, a Full Stack Developer building modern web applications.",
 };
